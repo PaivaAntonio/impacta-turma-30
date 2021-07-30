@@ -1,0 +1,67 @@
+MongoDB
+ExpressJS
+Angular
+NodeJS
+
+Mean Stack
+
+- Download do MongoDB
+http://www.mongodb.com
+Menu: Software - Community Server/Servidor Comunitário
+
+Selecionar a opção Install MongoDB as a Service - primeira opção de Service Network
+Pode instalar o MongoDB Compass -> ferramenta gráfica para o MongoDB
+
+- Download Visual Studio Code
+http://code.visualstudio.com/download
+
+Plugins/Extensões
+
+Name: EditorConfig for VS Code
+Id: editorconfig.editorconfig
+Description: EditorConfig Support for Visual Studio Code
+Version: 0.16.4
+Publisher: EditorConfig
+VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig
+
+Name: Blank Line Organizer
+Id: rintoj.blank-line-organizer
+Description: Removes unnecessary blank lines and adds if needed
+Version: 0.1.5
+Publisher: rintoj
+VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=rintoj.blank-line-organizer
+
+Name: Color Highlight
+Id: naumovs.color-highlight
+Description: Highlight web colors in your editor
+Version: 2.4.0
+Publisher: Sergii Naumov
+VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=naumovs.color-highlight
+
+Name: Git History
+Id: donjayamanne.githistory
+Description: View git log, file history, compare branches or commits
+Version: 0.6.17
+Publisher: Don Jayamanne
+VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=donjayamanne.githistory
+
+Name: GitLens — Git supercharged
+Id: eamodio.gitlens
+Description: Supercharge the Git capabilities built into Visual Studio Code — Visualize code authorship at a glance via Git blame annotations and code lens, seamlessly navigate and explore Git repositories, gain valuable insights via powerful comparison commands, and so much more
+Version: 11.6.0
+Publisher: Eric Amodio
+VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens
+
+- Download do NodeJS
+https://nodejs.org/en/
+
+Baixar LTS ou Current
+Testando versão e instalação
+$ node -v
+
+- Download GIT Bash 
+https://git-scm.com/downloads
+Ele funciona como um terminal, dentro do VSCode ou fora
+
+
+https://git-fork.com/
