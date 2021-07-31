@@ -66,5 +66,3 @@ Ele funciona como um terminal, dentro do VSCode ou fora
 
 - Download GIT Fork
 https://git-fork.com/
-
-TESTE
