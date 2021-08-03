@@ -1,0 +1,17 @@
+Callback é o retorno de uma função.
+
+Exemplo:
+var numbers = [1, 4, 9];
+
+Ao executar o map do javascript, executamos por dentro um loop de repetição em cima do array/lista que por sua vez irá executar uma função anônima nossa
+O map não altera a variável original, e cria um novo retorno como no exemplo abaixo de doubles.
+
+var doubles = numbers.map(function(num) {
+  return num * 2;
+});
+
+resultado => doubles = [2, 8, 18]
+
+****************************
+
+Arrow Function
