@@ -1,0 +1,48 @@
+Projeto NodeJS
+
+O arquivo package.json tem em sua estrutura uma propriedade chamada "dependencies" que é onde ficam declarados os módulos de terceiros utilizados no Projeto
+
+$ node 
+Usamos para executar arquivos .js para rodar os scripts gerados
+
+$ npm 
+Usamos para lidar com projetos Node (NodeJS, Angular, React...)
+npm - node package manager
+
+-> Versionamento Semântico
+https://semver.org/ -> explicação sobre versionamento de aplicativos e sistema
+
+2.1.3
+2 é o MAJOR version when you make incompatible API changes,
+1 é o MINOR version when you add functionality in a backwards compatible manner, and
+3 é o PATCH version when you make backwards compatible bug fixes.
+
+-> 1.0.0: integração rest (o back-end define um contrato de retorno para uma requisição aonde todos os dados vem fixos independente doq vc quer ou precisa - ex: lista de usuarios com nome e sobrenome, mas o back manda endereço, telefone, etc...)
+-> 2.0.0: integração graphQL (https://blog.codecasts.com.br/entendendo-o-que-%C3%A9-graphql-atrav%C3%A9s-de-exemplos-c2fa35e8bf63)
+-> 2.1.0: teste unitário
+-> 2.1.1: correção de erro encontrado em código já existente
+
+Install NPM Command
+
+- apenas instalar o módulo
+$ npm install <nome_modulo>
+
+- instalar o módulo e salvar no package.json 
+$ npm install <nome_modulo> --save
+
+- instalar módulo para desenvolvimento
+$ npm install <nome_modulo> --save-dev 
+
+- instalar módulo em nível global, onde outros projetos possam utilizar
+$ npm install <nome_modulo> -g 
+
+- atualização de módulos do projeto validando o package.json (dependencies)
+$ npm update
+
+Express
+
+O fluxo da aplicação MVC funciona mais ou menos assim:
+- o usuário faz uma requisição na URL (executa uma rota)
+- a rota localiza uma função no controller
+- a função é executada no controller e busca uma página (ejs) e apresenta para o usuário
+- a página (view) por sua vez pode executar funções para carregar dados que vem do model por meio do controller
