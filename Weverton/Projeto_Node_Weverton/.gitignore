@@ -1,8 +1,8 @@
 /dist
-*/dist
+**/dist
 /tmp
-*/tmp
+**/tmp
 /node_modules
-*/node_modules
+**/node_modules
 .Ds_Store 
 Thumbs.db
