@@ -38,3 +38,19 @@ A action de index por reagir a uma rota acionada, tem por definição a request 
 
 - A action de listar irá renderizar a view listar dentro da pasta eventos que está dentro da pasta principal de views pela linha abaixo:
     response.render('eventos/listar')
+
+
+
+ATIVIDADE PARA AULA 5
+
+Criar uma tela para cadastro de eventos
+- rota
+- action
+- view (formulario com input para título/nome do evento [text], data [date] e preço [number] + botão de cadastrar)
+
+Criar visual para tela de Lista Eventos
+- criar tabela listando eventos -> pode usar bootstrap CSS
+
+DESCRIÇÃO                  DATA                     PREÇO
+Meu aniversario            xx/xx/xxxx               R$ 10,00
+Churrasco da firma         xx/xx/xxxx               R$ 30,00

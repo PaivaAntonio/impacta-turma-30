@@ -24,7 +24,9 @@ module.exports = function (app) {
 			}
 		},
 		logout: function (request, response) {
-
+			// destruindo a sessão
+			request.session.destroy();
+			response.redirect('/');
 		}
 	};
 
