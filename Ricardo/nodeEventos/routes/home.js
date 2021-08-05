@@ -1,5 +1,18 @@
-module.exports = function(app){
-    var homec = app.controllers.homec;
 
-    app.get('/', homec.index)
+module.exports = function(app){
+    var valida = require('./../middlewares/valida')
+    var homec = app.controllers.homec;
+    var eventosc = app.controllers.eventosc;
+    var usuariosNovo = app.controllers.usuariosNovo;
+    var novoEvento = app.controllers.novoEvento;
+
+    app.get('/', homec.index);
+
+    app.post('/login', homec.login);
+    app.get('/logout', homec.logout);
+
+    app.get('/eventos', valida, eventosc.listar);
+
+    app.get('/usuarios/novo', valida, usuariosNovo.usuario);
+    app.get('/eventos/novo', valida, novoEvento.evento);
 }
