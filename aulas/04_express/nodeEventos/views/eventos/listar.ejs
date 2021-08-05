@@ -6,15 +6,13 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Eventos :: Lista</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous" />
     <link rel="stylesheet" href="/css/style.css" />
 </head>
 
 <body>
 	<header>
 		<h1>Lista de Eventos</h1>
-		<nav>
-			<a href="/logout">Sair</a>
-		</nav>
 	</header>
 	<main>
 		<nav id="menu">
@@ -28,9 +26,29 @@
 				<li>
 					<a href="/usuarios/novo">Cadastro de Usuários</a>
 				</li>
+				<li>
+					<a href="/logout">Sair</a>
+				</li>
 			</ul>
 		</nav>
-		<p>Welcome, <%= user.nome %></p>
+		<p class="welcomeMsg">Welcome, <%= user.nome %></p>
+		
+		<table class="table table-hover">
+			<thead>
+				<tr>
+					<th>Descrição</th>
+					<th>Data</th>
+					<th>Preço</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Teste</td>
+					<td>xx/xx/xxxx</td>
+					<td>R$ xx,xx</td>
+				</tr>
+			</tbody>
+		</table>
 	</main>
 </body>
 

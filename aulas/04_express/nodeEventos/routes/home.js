@@ -11,7 +11,7 @@ module.exports = function(app){
     app.get('/logout', homec.logout);
 
     app.get('/eventos', valida, eventosc.listar);
+    app.get('/eventos/novo', valida, eventosc.novo);
 
     app.get('/usuarios/novo', valida, usuariosc.novo);
-    app.post('/usuarios/cadastro', valida, usuariosc.novo);
 }

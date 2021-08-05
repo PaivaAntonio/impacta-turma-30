@@ -6,6 +6,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  color: white;
 }
 
 body {
@@ -21,7 +22,12 @@ header, main{
   margin: 0 auto;
 }
 
-h1 {
+header{
+  height: 100px;
+  padding: 40px 0;
+}
+
+header h1 {
   text-align: center;
   color: white;
 }
@@ -30,11 +36,16 @@ a {
   color: white;
 }
 
+.welcomeMsg{
+  padding-left: 20px;
+}
+
 .formulario {
   min-width: 300px;
   max-width: 500px;
   width: 70%;
   margin: 0 auto;
+  padding: 30px 0;
 }
 
 .formulario > div{
@@ -42,7 +53,6 @@ a {
 }
 
 .formulario > div label{
-  color: white;
   display: block;
   margin-bottom: 10px;
 }
@@ -58,8 +68,46 @@ a {
 
 .formulario > div button{
   padding: 5px 15px;
+  color: rgb(65,9,121,1);
+  border-radius: 5px;
+  border: none;
+  background-color: white;
+}
+
+.formulario > div button:hover{
+  background-color: rgb(65,9,121,1);
+  color: white;
+}
+
+#menu{
+  padding: 20px 0;
+}
+
+#menu ul{
+  list-style: none;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+}
+
+#menu ul li{
+  float: left;
+}
+
+#menu ul li:last-of-type{
+  float: right;
+}
+
+#menu ul li a{
+  padding: 5px 20px;
+  text-decoration: none;
+}
+
+#menu ul li a:hover{
+  color: #dc00fe;
 }
 
 #menu ul li a.active{
-  color: red;
+  color: #dc00fe;
+  font-weight: bold;
 }

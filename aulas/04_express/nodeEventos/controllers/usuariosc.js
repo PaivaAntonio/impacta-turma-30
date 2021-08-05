@@ -6,6 +6,11 @@ module.exports = function(app){
             // eventos é a pasta
             // listar é o arquivo HTML com extensão .ejs
             response.render('usuarios/novo', params)
+        },
+        criar: function(request, response){
+            var params = { user: request.session.usuarioSession }
+            
+            response.redirect('usuarios', params)
         }
     };
 
