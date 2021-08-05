@@ -1,12 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eventos :: Lista</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Eventos :: Lista</title>
 </head>
+
 <body>
-    <h1>Lista de Eventos</h1>
+	<header>
+		<h1>Lista de Eventos</h1>
+		<nav>
+			<a href="/logout">Sair</a>
+		</nav>
+	</header>
+	<main>
+		<nav>
+			<ul>
+				<li>
+					<a href="/eventos">Lista de Eventos</a>
+				</li>
+				<li>
+					<a href="/eventos/novo">Cadastro de Eventos</a>
+				</li>
+				<li>
+					<a href="/usuarios/novo">Cadastro de Usuários</a>
+				</li>
+			</ul>
+		</nav>
+		<p>Welcome, <%= user.nome %></p>
+	</main>
 </body>
+
 </html>

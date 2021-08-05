@@ -1,4 +1,5 @@
 module.exports = function(app){
+    var valida = require('./../middlewares/valida');
     // vamos criar uma variável para referenciar nosso controller
     var homec = app.controllers.homec;
     var eventosc = app.controllers.eventosc;
@@ -8,5 +9,5 @@ module.exports = function(app){
     app.post('/login', homec.login);
     app.get('/logout', homec.logout);
 
-    app.get('/eventos', eventosc.listar);
+    app.get('/eventos', valida, eventosc.listar);
 }
