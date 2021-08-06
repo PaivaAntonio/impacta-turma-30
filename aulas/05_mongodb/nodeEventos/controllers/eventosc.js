@@ -1,5 +1,6 @@
 module.exports = function(app){
     var Evento = app.models.eventosm;
+    var moment = require('moment');
 
     var EventosController = {
         listar: function(request, response){
@@ -10,7 +11,8 @@ module.exports = function(app){
                 } else{
                     var params = {
                         user: request.session.usuarioSession,
-                        eventosList: eventos
+                        eventosList: eventos,
+                        momentParam: moment
                     }
                     response.render('eventos/listar', params)
                 }
