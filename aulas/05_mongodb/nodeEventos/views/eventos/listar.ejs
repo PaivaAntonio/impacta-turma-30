@@ -42,11 +42,13 @@
 				</tr>
 			</thead>
 			<tbody>
+				<% eventosList.forEach(function(evento, index){ %>
 				<tr>
-					<td>Teste</td>
-					<td>xx/xx/xxxx</td>
-					<td>R$ xx,xx</td>
+					<td><%= evento.descricao %></td>
+					<td><%= evento.data %></td>
+					<td>R$ <%= evento.preco %></td>
 				</tr>
+				<% }) %>
 			</tbody>
 		</table>
 	</main>

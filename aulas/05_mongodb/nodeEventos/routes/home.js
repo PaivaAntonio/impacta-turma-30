@@ -12,6 +12,7 @@ module.exports = function(app){
 
     app.get('/eventos', valida, eventosc.listar);
     app.get('/eventos/novo', valida, eventosc.novo);
+    app.post('/eventos/novo/criar', valida, eventosc.criar);
 
     app.get('/usuarios/novo', valida, usuariosc.novo); // tela de formulario
     app.post('/usuarios/novo/criar', valida, usuariosc.criar); // action pra executar a tratativa dos dados do formulario
