@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos :: Novo</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous" />
+    <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+    <header>
+		<h1>Cadastro de Evento</h1>
+	</header>
+	<main>
+		<nav id="menu">
+			<ul>
+				<li>
+					<a href="/eventos">Lista de Eventos</a>
+				</li>
+				<li>
+					<a href="/eventos/novo" class="active">Cadastro de Eventos</a>
+				</li>
+				<li>
+					<a href="/usuarios/novo">Cadastro de Usuários</a>
+				</li>
+				<li>
+					<a href="/logout">Sair</a>
+				</li>
+			</ul>
+		</nav>
+		<p class="welcomeMsg">Welcome, <%= user.nome %></p>
+
+        <form action="/eventos/criar" method="post" class="formulario">
+            <div>
+                <label for="descricao">Descrição</label>
+                <input type="text" id="descricao" name="evento[descricao]" />
+            </div>
+            <div>
+                <label for="data">Data</label>
+                <input type="date" id="data" name="evento[data]" />
+            </div>
+            <div>
+                <label for="preco">Preço</label>
+                <input type="number" id="preco" name="evento[preco]" />
+            </div>
+            <div>
+                <button type="submit">Cadastrar</button>
+            </div>
+        </form>
+	</main>
+</body>
+</html>
