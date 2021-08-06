@@ -18,6 +18,7 @@ module.exports = function(app){
     app.post('/usuarios/criar', valida, usuariosNovo.criar);
     
     app.get('/eventos/novo', valida, novoEvento.evento);
+    app.post('/eventos/criar', eventosc.criar);
 
-    app.get('/eventos/eventos-criados', valida, listaEventos.eventos);
+    // app.get('/eventos/eventos-criados', valida, listaEventos.eventos);
 }

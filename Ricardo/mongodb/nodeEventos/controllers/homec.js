@@ -11,17 +11,6 @@ module.exports = function (app) {
 
       var query = { 'nome': nome, 'senha': senha}
 
-      // Usuario.findOne(query).exec(function(erro, usuario){
-      //   if(erro){
-      //     console.log('Erro: ' + erro);
-      //     response.redirect('/')
-      //   }
-      //   else {
-      //     request.session.usuarioSession = usuario
-      //     response.redirect('evento')
-      //   }
-      // })
-
       if (nome == "admin" && senha == "admin") {
         var user = request.body.usuario;
         request.session.usuarioSession = user;
