@@ -1,13 +1,13 @@
 module.exports = function(app) {
-    var novoEventoController = {
-        evento: function(request, response) {
-            response.render("eventos/novo")
+    var RegisterUserController = {
+        usuario: function(request, response) {
+            response.render("usuarios/novo");
         },
         criar: function(request, response) {
             var nome = request.body.usuario.nome;
             var senha = request.body.usuario.senha;
             var confirmarSenha = request.body.usuario.confirmarSenha;
-
+            
             if((senha != confirmarSenha) || senha.trim().length == 0 || nome.trim().length == 0){
                 response.redirect('/usuarios/novo')
             } else {
@@ -19,7 +19,7 @@ module.exports = function(app) {
                 Usuario.create(usuarioNovo, function(erro, item){
                     if(erro){
                         response.redirect('/usuario/novo')
-                        console.log(erro);
+                        console.log('erro ao adicionar' + erro);
                     }
                     else {
                         console.log('Usuário adicionado: ' + item);
@@ -29,5 +29,5 @@ module.exports = function(app) {
             }
         }
     }
-    return novoEventoController;
+    return RegisterUserController;
 }
