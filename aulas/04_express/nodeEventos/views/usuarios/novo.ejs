@@ -31,7 +31,7 @@
 		</nav>
 		<p class="welcomeMsg">Welcome, <%= user.nome %></p>
 
-        <form action="/usuarios/criar" method="post" class="formulario">
+        <form action="/usuarios/novo/criar" method="post" class="formulario">
             <div>
                 <label for="nome">Nome</label>
                 <input type="text" id="nome" name="usuarioNovo[nome]" />
@@ -42,7 +42,7 @@
             </div>
             <div>
                 <label for="senha">Confirmar Senha</label>
-                <input type="password" id="senha" name="usuarioNovo[senha]" />
+                <input type="password" id="senha" name="usuarioNovo[confirmarSenha]" />
             </div>
             <div>
                 <button type="submit">Cadastrar</button>

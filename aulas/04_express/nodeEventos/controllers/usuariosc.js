@@ -7,10 +7,12 @@ module.exports = function(app){
             // listar é o arquivo HTML com extensão .ejs
             response.render('usuarios/novo', params)
         },
-        criar: function(request, response){
-            var params = { user: request.session.usuarioSession }
+        criar: function(request, response){ // limbo
+            var nome = request.body.usuarioNovo.nome;
+            var senha = request.body.usuarioNovo.senha;
+            var confirmarSenha = request.body.usuarioNovo.confirmarSenha;
             
-            response.redirect('usuarios', params)
+            //response.redirect('usuarios', params)
         }
     };
 
