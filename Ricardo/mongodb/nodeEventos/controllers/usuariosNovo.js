@@ -1,4 +1,5 @@
 module.exports = function(app) {
+    var Usuario = app.models.usuariosm
     var RegisterUserController = {
         usuario: function(request, response) {
             response.render("usuarios/novo");
@@ -18,7 +19,7 @@ module.exports = function(app) {
 
                 Usuario.create(usuarioNovo, function(erro, item){
                     if(erro){
-                        response.redirect('/usuario/novo')
+                        response.redirect('/usuarios/novo')
                         console.log('erro ao adicionar' + erro);
                     }
                     else {
