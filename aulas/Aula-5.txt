@@ -1,0 +1,32 @@
+Mong DB
+
+Para executar o mongo, basta digitar 'mongo' no terminal:
+
+$ mongo 
+
+Para ver as bases existentes:
+
+$ show databases
+OU
+$ show dbs 
+
+Para criar uma nova base de dados, basta usar o comando 'use'. Porém, para de fato ele existir, é necessário utilizar o banco de dados, pois se não ele não será oficialmente criado
+$ use dbexemplo
+
+Ao executar o comando acima, ele 'muda' para a base de dados 'dbexemplo' e aguarda novos comandos
+
+Para listar as collections ('tabelas' -> nome incorreto para NoSQL, usado apenas para associação), basta usar o comando 'show'
+
+$ show collections 
+
+Para criar uma nova collection, você já pode criar, inserindo dados nela
+
+$ db.clientes.insert({ nome: 'fulado da silva', idade: 10 })
+-> usar 'db' no começo é devido a seleção já realizada da base de dados
+
+Para listar os resultados da collection:
+
+$ db.clientes.find()
+OU para listar um retorno por linha do document (registo do dado):
+$ db.clientes.find().pretty()
+
