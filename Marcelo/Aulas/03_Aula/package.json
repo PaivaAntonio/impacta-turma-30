@@ -1,0 +1,14 @@
+{
+  "name": "03_aula",
+  "version": "1.0.0",
+  "description": "Meu projeto node",
+  "main": "aula3.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Marcelo Martins",
+  "license": "ISC",
+  "dependencies": {
+    "moment": "^2.29.1"
+  }
+}

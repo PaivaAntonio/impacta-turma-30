@@ -1,0 +1,17 @@
+Fluxo da aplicação
+
+- ao ler o arquivo de rotas, ele vai se preparar para realizar as ações baseadas nas actions dos controles
+- ao colocar a rota, ele entende a declaração abaixo :
+
+e vai buscar aonde temos controllers definidos no arquivos app.js que setamos na pasta controllers para onde temos os arquivos:
+homec (ele interpreta sem precisar da extensão
+)
+
+-ao entrar no controller no homec.js, vemos o export do módulo com a declaração do homeController, como abaixo:
+
+
+dentro da variável do homeController, declarammos nosssas actions que serão as ações a serem tomadas pela aplicação quando rotas forem acionadas.
+
+A rota está definida para ler a action homec.index, como abaixo:
+
+A action de index, por reagir a uma rota acionada, tem por definição a request e a response, onde é possível compreender entradas e saídas para a tela
