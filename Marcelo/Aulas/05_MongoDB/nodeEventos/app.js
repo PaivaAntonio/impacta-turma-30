@@ -1,5 +1,22 @@
 var express = require("express");
 var load = require("express-load");
+var mongoose = require("mongoose");
+
+//
+global.db = mongoose.connect("mongodb://localhost:27017/turma30");
+
+mongoose.connection.on("connected", function(){
+    console.log("Conexão estabelecida");
+})
+
+mongoose.connection.on("error", function(){
+    console.log("Erro ao conectar");
+})
+
+mongoose.connection.on("disconnected", function(){
+    console.log("Conexão finalizada");
+})
+
 
 var bodyParser = require("body-parser");
 var cookieParser = require("cookie-parser");

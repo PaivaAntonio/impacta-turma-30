@@ -7,18 +7,18 @@
     <title>Document</title>
 </head>
 <body>
-    <form method="post" class="formulario">
+    <form action='/usuarios/criar' method="post" class="formulario">
         <div>
             <label for="nome">Nome</label>
-            <input type="text" id="nome" name="usuario[nome]" />
+            <input type="text" id="nome" name="usuarioNovo[nome]" />
         </div>
         <div>
             <label for="senha">Senha</label>
-            <input type="password" id="senha"  name="usuario[senha]" />
+            <input type="password" id="senha"  name="usuarioNovo[senha]" />
         </div>
         <div>
-            <label for="confirmarsenha">Confirmar Senha</label>
-            <input type="password" id="confirmarsenha"  name="usuario[confirmarsenha]" />
+            <label for="confirmarSenha">Confirmar Senha</label>
+            <input type="password" id="confirmarSenha"  name="usuarioNovo[confirmarSenha]" />
         </div>
         <div>
             <button type="submit">Salvar</button>
