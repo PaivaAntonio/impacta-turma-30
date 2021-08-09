@@ -34,12 +34,33 @@ app.get('/eventos', function (request, response) {
 
 // pegar somente 1 evento
 app.get('/evento/:id', function (request, response) {
-	
+	var id = request.params.id;
+
+	Evento.findById(id, function(erro, evento){
+		if(erro){
+			response.json(erro);
+		} else{
+			response.json(evento);
+		}
+	});
 })
 
 // criar um novo evento
 app.post('/evento', function (request, response) {
+	// criamos a estrutura do evento baseado nos dados esperados do model
+	var evento = {
+		'descricao': request.body.descricao,
+		'data': request.body.data,
+		'preco': request.body.preco
+	};
 
+	Evento.create(evento, function(erro, evento){
+		if(erro){
+			response.json(erro);
+		} else{
+			response.json(evento);
+		}
+	})
 })
 
 // atualizar um evento
