@@ -15,6 +15,7 @@ module.exports = function(app){
 
     app.get('/eventos', valida, eventosc.listar);
     app.get('/eventos/novo', valida, eventosc.novo);
+    app.post('/eventos/criar', valida, eventosc.criar);
     
     //
     app.get('/usuarios/novo', valida, usuariosc.novo);

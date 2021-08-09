@@ -1,4 +1,6 @@
 module.exports = function(app){
+    var Usuario = app.models.usuariosm;
+    
     var homeController = {
         // Comumente isso é chamado de "Action"
         index: function(request, response){
@@ -10,16 +12,21 @@ module.exports = function(app){
             // request para utilizar o bodyParser
             var nome = request.body.usuario.nome;
             var senha = request.body.usuario.senha;
-            if(nome == "admin" && senha == "admin")
-            {
-                // vamos armazenar informações para a sessão
-                var user = request.body.usuario;
-                request.session.usuarioSession = user;
-                response.redirect('eventos');
-            }else{
-                // vamos redirecionar para a tela inicial
-                response.redirect('/');
-            }
+
+            var query = { 'nome': nome, 'senha': senha };
+
+            Usuario.findOne(query).exec(function(erro, usuario){
+                if(erro){
+                    // vamos redirecionar para a tela inicial
+                    console.log('Erro: '+ erro);
+                    response.redirect('/');
+                } else{
+                    // criar sessão - usuarioSession (nome da sessão)
+                    request.session.usuarioSession = usuario;
+                    // o redirect faz uma chamada de rota para modificar a página
+                    response.redirect('eventos');
+                }
+            })
         },
         // Comumente isso é chamado de "Action"
         logout: function(request, response){

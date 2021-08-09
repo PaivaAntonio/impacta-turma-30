@@ -39,11 +39,13 @@
             </tr>
         </thead>
         <tbody>
+            <% eventosList.forEach(function(eventos, index){%>
             <tr>
-                <td>Teste</td>
-                <td>xx/xx/xxxx</td>
-                <td>R$ xx,xx</td>
+                <td><%= eventos.titulo%></td>
+                <td><%= momentParam(eventos.data).format("DD/MM/YYYY")%></td>
+                <td>R$ <%= eventos.preco%></td>
             </tr>
+            <%})%>
         </tbody>
     </table>        
 
