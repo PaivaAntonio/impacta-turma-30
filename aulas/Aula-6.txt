@@ -1,0 +1,27 @@
+Webservice Mock
+
+$ npm i json-server -g
+
+Criar arquivo db.json com estrutura de objeto json:
+{
+    "produtos": [
+        {
+            "id": 1,
+            "descricao": "Camiseta",
+            "preco": 30
+        },
+        {
+            "id": 2,
+            "descricao": "Mochila",
+            "preco": 50
+        },
+        {
+            "id": 3,
+            "descricao": "Celular",
+            "preco": 2000
+        }
+    ]
+}
+
+Rodar na pasta do db.json:
+$ json-server db.json
