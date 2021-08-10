@@ -65,12 +65,54 @@ app.post('/evento', function (request, response) {
 
 // atualizar um evento
 app.put('/evento/:id', function (request, response) {
+	var id = request.params.id;
 
+	// para editarmos um evento, primeiramente buscamos pelo menos e então o atualizamos
+	// usamos a função .save para realizar essa atualização no sucesso de encontrar o evento
+	Evento.findById(id, function(erro, evento){
+		if(erro){
+			response.json(erro);
+		} else{
+			// prosseguir com a atualização do evento encontrado
+			// pegamos o evento encontrado pelo ID e substituimos os seus valores com os novos valores enviados via corpo da requisição
+			evento.descricao = request.body.descricao;
+			evento.data = request.body.data;
+			evento.preco = request.body.preco;
+
+			// ao termos o evento com seu objeto atualizado, chamamos a função save para salvar os dados
+			// não temos parametro para enviar, então apenas validamos o erro e o sucesso
+			evento.save(function(erro, eventoAtualizado){
+				if(erro){
+					response.json(erro);
+				} else{
+					response.json(eventoAtualizado);
+				}
+			})
+		}
+	})
 })
 
 // deletar um evento
 app.delete('/evento/:id', function (request, response) {
+	var id = request.params.id;
 
+	Evento.findById(id, function(erro, evento){
+		if(erro){
+			response.json(erro);
+		} else{
+			if(evento){
+				Evento.deleteOne(evento, function(erro, eventoApagado){
+					if(erro){
+						response.json(erro);
+					} else{
+						response.json(eventoApagado);
+					}
+				})
+			} else{
+				response.json(erro);
+			}
+		}
+	})
 })
 
 app.listen(3200, function () {
