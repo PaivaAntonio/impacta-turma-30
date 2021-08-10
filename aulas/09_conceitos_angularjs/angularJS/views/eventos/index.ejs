@@ -15,25 +15,50 @@
 <body ng-controller="CTLprincipal as ctl">
     <section class="container">
         <h1>Cadastro e consulta de eventos</h1>
-        <h2>Lista de Eventos</h2>
 
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th>Descrição</th>
-                    <th>Data</th>
-                    <th>Preço</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- evento é o item individual da lista retornada pelo webservice que será executado e lido para montar cada linha de retorno -->
-                <tr ng-repeat="evento in ctl.listaEventos">
-                    <td>{{ evento.descricao }}</td>
-                    <td>{{ evento.data }}</td>
-                    <td>R$ {{ evento.preco }}</td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Lista de Eventos</h2>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Descrição</th>
+                            <th>Data</th>
+                            <th>Preço</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- evento é o item individual da lista retornada pelo webservice que será executado e lido para montar cada linha de retorno -->
+                        <tr ng-repeat="evento in ctl.listaEventos">
+                            <td>{{ evento.descricao | uppercase }}</td>
+                            <td>{{ evento.data | date:'dd/MM/yyyy' }}</td>
+                            <td>{{ evento.preco | currency:'R$' }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-6">
+                <h2>Inclusão de Eventos</h2>
+                <form name="incluirEvento" ng-submit="ctl.criarEvento()">
+                    <div class="form-group">
+                        <label for="descricao">Descrição</label>
+                        <input type="text" name="descricao" id="descricao" ng-model="ctl.novoEvento.descricao" class="form-control">
+                        <!-- o ng-model faz o binding da informação permitindo o uso da informação no HTML e no javascript -->
+                    </div>
+                    <div class="form-group">
+                        <label for="data">Data</label>
+                        <input type="date" name="data" id="data" ng-model="ctl.novoEvento.data" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="preco">Preço</label>
+                        <input type="number" name="preco" id="preco" ng-model="ctl.novoEvento.preco" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary">Adicionar Evento</button>
+                    </div>
+                </form>
+            </div>
+        </div>
     </section>
 </body>
 
@@ -60,6 +85,7 @@
 
         // crio uma lista vazia de eventos para poder ser populada e posteriormente lida no HTML para exibir na tela
         self.listaEventos = [];
+        self.novoEvento = {};
 
         // criaremos a função para acessar o webservice
         var listarEventos = function() {
@@ -77,12 +103,30 @@
                     self.listaEventos = resposta.data;
                 }, function(erro) {
                     console.log(erro)
-                    alert('Acontece um erro');
+                    alert('Aconteceu um erro');
                 })
         }
 
         // chamamos a função para executar após processar o código existente, que carregará ops eventos para então colocarmos no código HTML
         listarEventos();
+
+
+        self.criarEvento = function() {
+            $http({
+                url: 'http://localhost:3200/evento',
+                method: 'POST',
+                data: self.novoEvento,
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            }).then(function(resposta) {
+                console.log(resposta);
+                self.novoEvento = {};
+            }, function(erro) {
+                console.log(erro);
+                alert('Ocorreu um erro ao inserir o evento')
+            }).then(listarEventos);
+        }
     }])
 </script>
 
