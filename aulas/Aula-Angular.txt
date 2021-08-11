@@ -1,0 +1,88 @@
+Angular
+
+Instalação do Angular:
+$ npm i @angular/cli -g
+
+Criar uma nova aplicação:
+$ ng new <nome da aplicação>
+- ao rodar o comando acima, é questionado se queremos rota (Y/N) e qual método de estilo usaremos (CSS/SCSS/SASS/LESS)
+
+Rodar a aplicação:
+$ ng serve
+
+Após rodar, carregamos a aplicação pelo http://localhost:4200
+
+****
+
+A configuração do angular se faz no angular.json
+Nele temos a definição do arquivo inicial de leitura para o main.ts que starta a nossa aplicação
+
+O bootstrapModule carrega o AppModule para carregamento inicial da aplicação
+O AppModule define no bootstrap o componente que vai ser inicializado: AppComponent
+
+E no AppComponent temos em sua definição o 'selector' que é a nossa "tag de HTML" que usaremos para carregar o conteúdo - essa tag é usada no arquivo index.html da aplicação
+
+****
+
+Decorators
+
+A definição dos tipos de arquivos se faz no arquivo com extensão '.ts' aonde temos o @ - esse @ se chama Decorator
+
+app.module.ts <- nome do arquivo
+@NgModule({...}) <- declaração do Decorator
+export class AppModule{ ... } <- criação e exportação da classe
+
+app.component.ts
+@Component({...})
+export class AppComponent{ ... }
+
+app.service.ts
+@Injectable({...})
+export class AppService{ ... }
+
+****
+
+Módulo: é o elemento que reúne os demais elementos da aplicação. Todos os elementos da aplicação devem ser registrados no Módulo
+
+app.module.ts
+@NgModule({
+	declarations: [], // aqui referenciamos todos os componentes que são relacionados à esse módulo
+	imports: [], // aqui ficam os módulos do projeto ou módulos terceiros que usamos para funcionalidade daquele módulo
+	providers: [], // aqui ficam os serviços (services)
+	bootstrap: [], // componente inicial
+	exports: [] // quando temos mais de 1 módulo na aplicação - por exemplo o shared
+})
+export class AppModule{ ... }
+
+****
+
+Componente: é o elemento responsável por renderizar (carregar) a view (ou parte da view) para o usuário
+
+app.component.ts
+@Component({
+	selector: '', // utilizamos como boa prática o prefixo que é declarado no angular.json. A tag de HTML que criamos aqui para fazer uso na aplicação se dá pelo nome colocado no selector que carregará o conteúdo HTML do componente gerado
+	template | templateUrl: '', // usado UM OU OUTRO. podemos usar 'template' para escrever diretamente o HTML ou referenciar um arquivo por meio do 'templateUrl'
+	styles: '' | styleUrls: [], // é o CSS para a aplicação. Se quisermos tratar o CSS direto, usamos styles. Se quisermos ter 1 ou mais arquivos, usamos styleUrls com um array. Usado UM OU OUTRO
+})
+export class AppComponent
+
+****
+
+Criação de componente na mão:
+1. Criar a pasta componentes
+2. Criar a pasta app-exemplo1
+3. Criar o arquivo component.ts (declaração do Decorator + criação e exportação da classe)
+4. Criar o arquivo component.html 
+5. Criar o arquivo component.scss 
+6. Registrar/Declarar/Importar o componente no arquivo app.module.ts 
+
+****
+
+Diretiva Estrutural
+
+É uma forma de controlar/alterar a estrutura do código/componente em uma página
+
+Fazemos uso de um atributo na tag de HTML com uso do * (asterisco) na frente desse atributo.
+Exemplo:
+*ngFor (laço de repetição)
+*ngIf (condicional de exibição na tela)
