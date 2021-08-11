@@ -110,8 +110,11 @@
         // chamamos a função para executar após processar o código existente, que carregará ops eventos para então colocarmos no código HTML
         listarEventos();
 
-
+        // função para incluir um evento no webservice e carregar na lista de eventos
+        // o self usamos para fazer referencia ao controller que aciona o ng-submit no form
         self.criarEvento = function() {
+            // usamos o método http de ums forma diferente, passando um objeto com os parâmetros para a chamada, passando o TIPO, a URL, os DADOS e o CABEÇALHO
+            // e usaremos 2 then's na função: 1 para inserir o evento, 2 para atualizar a lista de eventos
             $http({
                 url: 'http://localhost:3200/evento',
                 method: 'POST',
@@ -120,12 +123,14 @@
                     'Content-Type': 'application/json'
                 }
             }).then(function(resposta) {
+                // ao obter sucesso na chamada, não precisamos fazer nada com o retorno da api que é o evento criado, podemos somente resetar as informações do formulário
                 console.log(resposta);
                 self.novoEvento = {};
             }, function(erro) {
                 console.log(erro);
                 alert('Ocorreu um erro ao inserir o evento')
             }).then(listarEventos);
+            // como queremos a atualização da lista de eventos passamos o listarEventos como callback para ser executada após o sucesso da inserção
         }
     }])
 </script>
