@@ -68,7 +68,19 @@ export class AppComponent
 
 ****
 
+Diretiva Estrutural
+
+É uma forma de controlar/alterar a estrutura do código/componente em uma página
+
+Fazemos uso de um atributo na tag de HTML com uso do * (asterisco) na frente desse atributo.
+Exemplo:
+*ngFor (laço de repetição)
+*ngIf (condicional de exibição na tela)
+
+****
+
 Criação de componente na mão:
+
 1. Criar a pasta componentes
 2. Criar a pasta app-exemplo1
 3. Criar o arquivo component.ts (declaração do Decorator + criação e exportação da classe)
@@ -78,11 +90,54 @@ Criação de componente na mão:
 
 ****
 
-Diretiva Estrutural
+Criando 'coisas' no Angular com NG GENERATE
 
-É uma forma de controlar/alterar a estrutura do código/componente em uma página
+O 'ng generate' permite que criemos diversas coisas para nossa aplicação: https://angular.io/cli/generate
 
-Fazemos uso de um atributo na tag de HTML com uso do * (asterisco) na frente desse atributo.
-Exemplo:
-*ngFor (laço de repetição)
-*ngIf (condicional de exibição na tela)
+Criando componente:
+
+$ ng generate component <nome_componente> <pasta>
+
+****
+
+INTERFACE
+
+funcoes.ts
+
+export interface Funcoes{
+	calcularTamanhoM2(largura: number, altura: number): number;
+}
+
+exports class Component implements Funcoes{
+	calcularTamanhoM2(largura: number, altura: number){
+		return largura * altura;
+	}
+}
+
+interface Aluno{
+	nome: string;
+	idade: number:
+	telefone: number;
+	nascimento: date;
+}
+
+import { Aluno } from '...';
+
+exports class Component{
+	aluno: Aluno;
+}
+
+****
+
+Service (ou Serviço)
+
+Uma Service é um repositório de informações ou de configurações que declaramos e definimos no constructor do componente. A service literalmente servirá para o componente para algo: tratar uma informação, trazer dados, etc... a ideia é 'padronizar' comportamentos.
+A Service é declarada no constructor para que quando o componente seja criado ele esteja pronto e apto para interagir com os serviços que auxiliarão para lidar (seja de qual forma for) com os dados e configurações / funções vindas da service.
+Uma Service não interage com o usuário. É um controle totalmente para o sistema.
+
+****
+
+Criando nova aplicação Angular
+
+$ ng new <nome da aplicação> --routing=true --style=scss --skip-tests=true
+O comando acima gera uma aplicação com configuração de rotas, SCSS por padrão para estilo e sem arquivos de teste

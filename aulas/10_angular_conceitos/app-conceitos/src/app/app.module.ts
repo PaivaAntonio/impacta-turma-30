@@ -3,16 +3,24 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { AppExemplo1Component } from './components/app-exemplo1/app-exemplo1.component';
+import { AppExemplo2Component } from './components/app-exemplo2/app-exemplo2.component';
+import { AppExemplo3Component } from './components/app-exemplo3/app-exemplo3.component';
+import { PropertyBindingComponent } from './components/property-binding/property-binding.component';
+import { EventBindingComponent } from './components/event-binding/event-binding.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-	AppExemplo1Component
-  ],
-  imports: [
-    BrowserModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+	declarations: [
+		AppComponent,
+		AppExemplo1Component,
+		AppExemplo2Component,
+		AppExemplo3Component,
+  PropertyBindingComponent,
+  EventBindingComponent
+	],
+	imports: [
+		BrowserModule
+	],
+	providers: [],
+	bootstrap: [AppComponent]
 })
 export class AppModule { }
