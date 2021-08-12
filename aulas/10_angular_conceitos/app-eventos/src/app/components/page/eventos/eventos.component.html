@@ -1,0 +1,21 @@
+<h1>Gestão de Eventos</h1>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Descrição</th>
+            <th>Data</th>
+            <th>Preço</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- para exibir o dado na tela e 'testar'/validar as informações, podemos escrever a interpolação com a variável e um 'pipe' json, assim o retorno vem completo na tela para nós:
+			{{eventos|json}}
+		-->
+        <tr *ngFor="let evento of eventos">
+            <td>{{ evento.descricao }}</td>
+            <td>{{ evento.data | date:'dd/MM/yyyy' }}</td>
+            <td>{{ evento.preco | currency:'R$' }}</td>
+        </tr>
+    </tbody>
+</table>
