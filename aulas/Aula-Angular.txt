@@ -141,3 +141,15 @@ Criando nova aplicação Angular
 
 $ ng new <nome da aplicação> --routing=true --style=scss --skip-tests=true
 O comando acima gera uma aplicação com configuração de rotas, SCSS por padrão para estilo e sem arquivos de teste
+
+****
+
+Vinculo Bi-Direcional / Binding Bi-Direcional
+Junção do Property Binding e Event Binding
+
+Property Binding -> [property] - do componente para o HTML
+Event Binding -> (event) - do HTML para o componente
+
+Bi-direcional -> [(ngModel)]
+
+Para usar o ngModel para o vinculo bi-direcional, precisamos fazer uso do FormsModule no AppModule
