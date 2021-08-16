@@ -9,6 +9,8 @@ import { ListaEventosComponent } from './components/page/eventos/lista/eventos.c
 import { UsuariosComponent } from './components/page/usuarios/usuarios.component';
 import { NotFoundComponent } from './components/page/not-found/not-found.component';
 import { HttpClientModule } from '@angular/common/http';
+import { NovoEventoComponent } from './components/page/eventos/novo/novo.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
 	declarations: [
@@ -16,14 +18,16 @@ import { HttpClientModule } from '@angular/common/http';
 		HomeComponent,
 		ListaEventosComponent,
 		UsuariosComponent,
-		NotFoundComponent
+		NotFoundComponent,
+		NovoEventoComponent
 	],
 	imports: [
 		BrowserModule,
 		AppRoutingModule,
 		SharedModule,
 		HttpClientModule,
-		BrowserAnimationsModule
+		BrowserAnimationsModule,
+		FormsModule
 	],
 	providers: [],
 	bootstrap: [AppComponent]

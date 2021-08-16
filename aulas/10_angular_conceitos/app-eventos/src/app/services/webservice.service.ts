@@ -26,4 +26,8 @@ export class WebserviceService {
 	public getEventos(): Observable<Evento[]>{
 		return this.http.get<Evento[]>(this.urlList);
 	}
+
+	public postEvento(evento: Evento): Observable<Evento>{
+		return this.http.post<Evento>(this.urlCRUD, evento)
+	}
 }
