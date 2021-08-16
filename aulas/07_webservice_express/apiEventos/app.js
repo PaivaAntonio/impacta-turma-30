@@ -65,6 +65,7 @@ app.post('/evento', function(request, response) {
 
     Evento.create(evento, function(erro, evento) {
         if (erro) {
+            erro.code = 500;
             response.json(erro);
         } else {
             response.json(evento);
