@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SharedModule } from './components/shared/shared.module';
 import { HomeComponent } from './components/page/home/home.component';
-import { EventosComponent } from './components/page/eventos/eventos.component';
+import { ListaEventosComponent } from './components/page/eventos/lista/eventos.component';
 import { UsuariosComponent } from './components/page/usuarios/usuarios.component';
 import { NotFoundComponent } from './components/page/not-found/not-found.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -14,7 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 	declarations: [
 		AppComponent,
 		HomeComponent,
-		EventosComponent,
+		ListaEventosComponent,
 		UsuariosComponent,
 		NotFoundComponent
 	],
