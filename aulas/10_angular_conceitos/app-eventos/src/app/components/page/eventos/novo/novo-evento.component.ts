@@ -3,6 +3,7 @@ import { Location } from '@angular/common';
 import { Evento } from 'src/app/interfaces/evento';
 import { WebserviceService } from 'src/app/services/webservice.service';
 import { Router } from '@angular/router';
+import { UtilsService } from 'src/app/services/utils.service';
 
 @Component({
 	selector: 'app-novo',
@@ -16,7 +17,8 @@ export class NovoEventoComponent implements OnInit {
 	constructor(
 		private location: Location,
 		private webservice: WebserviceService,
-		private router: Router
+		private router: Router,
+		public utilsService: UtilsService
 	) {
 		this.evento = {
 			descricao: "",
@@ -27,11 +29,6 @@ export class NovoEventoComponent implements OnInit {
 
 	ngOnInit(): void {
 
-	}
-
-	cancelar() {
-		this.location.back();
-		return false;
 	}
 
 	incluir(evento: Evento): void {

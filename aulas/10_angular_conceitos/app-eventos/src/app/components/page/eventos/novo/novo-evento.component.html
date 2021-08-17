@@ -23,7 +23,7 @@
                 <button (click)="incluir(evento)" class="btn btn-primary">Incluir</button>
             </div>
             <div class="col-md-1">
-                <button (click)="cancelar()" class="btn btn-secondary">Cancelar</button>
+                <button (click)="utilsService.voltar()" class="btn btn-secondary">Cancelar</button>
             </div>
         </div>
         <div *ngIf="erro">Erro ao preencher o formulário</div>

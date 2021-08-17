@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import * as moment from 'moment';
 import { Evento } from 'src/app/interfaces/evento';
 import { LogService } from 'src/app/services/log.service';
+import { UtilsService } from 'src/app/services/utils.service';
 import { WebserviceService } from 'src/app/services/webservice.service';
 
 @Component({
@@ -17,8 +18,8 @@ export class EditarEventoComponent implements OnInit {
 		private activatedRoute: ActivatedRoute,
 		private webservice: WebserviceService,
 		private router: Router,
-		private location: Location,
-		private logService: LogService
+		private logService: LogService,
+		public utilsService: UtilsService
 	) {
 		this.logService.show('info', 'entrou no editar');
 		this.evento = {
@@ -48,11 +49,6 @@ export class EditarEventoComponent implements OnInit {
 		this.webservice.putEvento(evento).subscribe(() => {
 			this.router.navigate(['/eventos']);
 		})
-	}
-
-	cancelar() {
-		this.location.back();
-		return false;
 	}
 
 }

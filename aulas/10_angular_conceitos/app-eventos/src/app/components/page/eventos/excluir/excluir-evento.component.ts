@@ -2,6 +2,7 @@ import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Evento } from 'src/app/interfaces/evento';
+import { UtilsService } from 'src/app/services/utils.service';
 import { WebserviceService } from 'src/app/services/webservice.service';
 
 @Component({
@@ -16,7 +17,8 @@ export class ExcluirEventoComponent implements OnInit {
 		private activatedRoute: ActivatedRoute,
 		private webservice: WebserviceService,
 		private router: Router,
-		private location: Location
+		private location: Location,
+		public utilsService: UtilsService
 	) {
 		this.evento = {
 			descricao: '',
@@ -40,11 +42,6 @@ export class ExcluirEventoComponent implements OnInit {
 		this.webservice.deleteEvento(id).subscribe(() => {
 			this.router.navigate(['/eventos']);
 		})
-	}
-
-	cancelar() {
-		this.location.back();
-		return false;
 	}
 
 }
