@@ -12,9 +12,9 @@ export class WebserviceService {
 	// urlEnvCRUD: string = environment.urlCRUD;
 	// urlEnvList: string = environment.urlList;
 
-	urlCRUD: string = "http://localhost:3200/evento";
-	urlList: string = "http://localhost:3200/eventos";
+	urlCRUDEvento: string = "http://localhost:3200/evento";
 	urlCRUDUsuario: string = "http://localhost:3200/usuario";
+	urlListaEventos: string = "http://localhost:3200/eventos";
 	urlListaUsuarios: string = "http://localhost:3200/usuarios";
 
 	// HttpClient serve como o http que usamos no AngularJS para requisições
@@ -27,13 +27,15 @@ export class WebserviceService {
 	// falamos também para a requisição o que é esperado no seu tipo = Evento[]
 	// e falamos de onde esperamos essa lista = urlList
 	public getEventos(): Observable<Evento[]>{
-		return this.http.get<Evento[]>(this.urlList);
+		return this.http.get<Evento[]>(this.urlListaEventos);
+	}
+
 	public getUsuarios(): Observable<Usuario[]>{
 		return this.http.get<Usuario[]>(this.urlListaUsuarios);
 	}
 
 	public getEvento(id: any): Observable<Evento>{
-		const url = `${this.urlCRUD}/${id}`;
+		const url = `${this.urlCRUDEvento}/${id}`;
 		return this.http.get<Evento>(url);
 	}
 
@@ -41,17 +43,18 @@ export class WebserviceService {
 		const url = `${this.urlCRUDUsuario}/${id}`;
 		return this.http.get<Usuario>(url);
 	}
+
 	public postEvento(evento: Evento): Observable<Evento>{
-		return this.http.post<Evento>(this.urlCRUD, evento)
+		return this.http.post<Evento>(this.urlCRUDEvento, evento)
 	}
 
 	public putEvento(evento: Evento): Observable<Evento>{
-		const url = `${this.urlCRUD}/${evento._id}`;
+		const url = `${this.urlCRUDEvento}/${evento._id}`;
 		return this.http.put<Evento>(url, evento);
 	}
 
 	public deleteEvento(id: any): Observable<Evento>{
-		const url = `${this.urlCRUD}/${id}`;
+		const url = `${this.urlCRUDEvento}/${id}`;
 		return this.http.delete<Evento>(url);
 	}
 }
