@@ -11,6 +11,7 @@ import { NotFoundComponent } from './components/page/not-found/not-found.compone
 import { HttpClientModule } from '@angular/common/http';
 import { NovoEventoComponent } from './components/page/eventos/novo/novo.component';
 import { FormsModule } from '@angular/forms';
+import { VerEventoComponent } from './components/page/eventos/ver/ver.component';
 
 @NgModule({
 	declarations: [
@@ -19,7 +20,8 @@ import { FormsModule } from '@angular/forms';
 		ListaEventosComponent,
 		UsuariosComponent,
 		NotFoundComponent,
-		NovoEventoComponent
+		NovoEventoComponent,
+		VerEventoComponent
 	],
 	imports: [
 		BrowserModule,

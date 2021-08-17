@@ -1,0 +1,9 @@
+<h1>Evento</h1>
+
+<section class="alert alert-info">
+    <p><strong>Descrição:</strong> {{evento.descricao}}</p>
+    <p><strong>Data:</strong> {{evento.data | date:'dd/MM/yyyy'}}</p>
+    <p><strong>Preço:</strong> {{evento.preco}}</p>
+</section>
+
+<a [routerLink]="['/eventos']" class="btn btn-secondary">Voltar</a>

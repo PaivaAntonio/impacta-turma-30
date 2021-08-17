@@ -6,6 +6,7 @@
             <th>Descrição</th>
             <th>Data</th>
             <th>Preço</th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -16,6 +17,11 @@
             <td>{{ evento.descricao }}</td>
             <td>{{ evento.data | date:'dd/MM/yyyy' }}</td>
             <td>{{ evento.preco | currency:'R$' }}</td>
+            <td>
+                <a [routerLink]="['/evento/'+evento._id]" class="btn btn-info">
+					Ver
+				</a>
+            </td>
         </tr>
     </tbody>
 </table>
