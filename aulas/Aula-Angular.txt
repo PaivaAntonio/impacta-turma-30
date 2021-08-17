@@ -153,3 +153,29 @@ Event Binding -> (event) - do HTML para o componente
 Bi-direcional -> [(ngModel)]
 
 Para usar o ngModel para o vinculo bi-direcional, precisamos fazer uso do FormsModule no AppModule
+
+****
+
+Rodando a aplicação localmente
+
+$ ng serve --configuration=uat
+
+$ ng serve -c uat
+
+$ npm start -> roda o $ ng serve
+
+Para criar scripts novos, alteramos o package.json e criamos um novo comando em 'scripts'
+
+Exemplo: "uat": "ng serve -c uat"
+
+$ npm run uat
+
+Exemplo: "banana": "ng serve -c uat"
+
+$ npm run banana
+
+****
+
+Buildando a aplicação para colocar no servidor
+
+$ ng build -c production
