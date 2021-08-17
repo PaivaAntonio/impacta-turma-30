@@ -24,6 +24,7 @@ global.db = mongoose.connect('mongodb://localhost:27017/turma30', {
 load('models').into(app);
 
 var Evento = app.models.eventosm;
+var Usuario = app.models.usuariosm;
 
 // apenas uma mensagem para o usuário ler no navegador caso abra a tela
 app.get('/', function(request, response) {
@@ -41,11 +42,35 @@ app.get('/eventos', function(request, response) {
     })
 })
 
+// lista de todos os usuarios
+app.get('/usuarios', function(request, response) {
+    Usuario.find(function(erro, retorno) {
+        if (erro) {
+            response.json(erro);
+        } else {
+            response.json(retorno);
+        }
+    })
+})
+
 // pegar somente 1 evento
 app.get('/evento/:id', function(request, response) {
     var id = request.params.id;
 
     Evento.findById(id, function(erro, evento) {
+        if (erro) {
+            response.json(erro);
+        } else {
+            response.json(evento);
+        }
+    });
+})
+
+// pegar somente 1 usuario
+app.get('/usuario/:id', function(request, response) {
+    var id = request.params.id;
+
+    Usuario.findById(id, function(erro, evento) {
         if (erro) {
             response.json(erro);
         } else {
