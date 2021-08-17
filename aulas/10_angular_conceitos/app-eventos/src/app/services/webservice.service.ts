@@ -40,4 +40,9 @@ export class WebserviceService {
 		const url = `${this.urlCRUD}/${evento._id}`;
 		return this.http.put<Evento>(url, evento);
 	}
+
+	public deleteEvento(id: any): Observable<Evento>{
+		const url = `${this.urlCRUD}/${id}`;
+		return this.http.delete<Evento>(url);
+	}
 }

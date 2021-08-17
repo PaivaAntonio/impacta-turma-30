@@ -13,6 +13,7 @@ import { NovoEventoComponent } from './components/page/eventos/novo/novo.compone
 import { FormsModule } from '@angular/forms';
 import { VerEventoComponent } from './components/page/eventos/ver/ver.component';
 import { EditarEventoComponent } from './components/page/eventos/editar/editar.component';
+import { ExcluirEventoComponent } from './components/page/eventos/excluir/excluir.component';
 
 @NgModule({
 	declarations: [
@@ -23,7 +24,8 @@ import { EditarEventoComponent } from './components/page/eventos/editar/editar.c
 		NotFoundComponent,
 		NovoEventoComponent,
 		VerEventoComponent,
-		EditarEventoComponent
+		EditarEventoComponent,
+		ExcluirEventoComponent
 	],
 	imports: [
 		BrowserModule,
