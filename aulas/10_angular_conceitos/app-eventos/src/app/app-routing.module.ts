@@ -7,7 +7,8 @@ import { NovoEventoComponent } from './components/page/eventos/novo/novo-evento.
 import { VerEventoComponent } from './components/page/eventos/ver/ver-evento.component';
 import { HomeComponent } from './components/page/home/home.component';
 import { NotFoundComponent } from './components/page/not-found/not-found.component';
-import { UsuariosComponent } from './components/page/usuarios/usuarios.component';
+import { ListaUsuariosComponent } from './components/page/usuarios/lista/lista-usuarios.component';
+import { VerUsuarioComponent } from './components/page/usuarios/ver/ver-usuario.component';
 
 const routes: Routes = [
 	{
@@ -36,7 +37,11 @@ const routes: Routes = [
 	},
 	{
 		path: "usuarios",
-		component: UsuariosComponent
+		component: ListaUsuariosComponent
+	},
+	{
+		path: "usuario/:idUsuario",
+		component: VerUsuarioComponent
 	},
 	{
 		path: "**",

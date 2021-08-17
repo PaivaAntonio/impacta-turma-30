@@ -3,6 +3,7 @@ import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Evento } from '../interfaces/evento';
+import { Usuario } from '../interfaces/usuario';
 
 @Injectable({
 	providedIn: 'root'
@@ -13,6 +14,8 @@ export class WebserviceService {
 
 	urlCRUD: string = "http://localhost:3200/evento";
 	urlList: string = "http://localhost:3200/eventos";
+	urlCRUDUsuario: string = "http://localhost:3200/usuario";
+	urlListaUsuarios: string = "http://localhost:3200/usuarios";
 
 	// HttpClient serve como o http que usamos no AngularJS para requisições
 	constructor(private http: HttpClient) { }
@@ -25,6 +28,8 @@ export class WebserviceService {
 	// e falamos de onde esperamos essa lista = urlList
 	public getEventos(): Observable<Evento[]>{
 		return this.http.get<Evento[]>(this.urlList);
+	public getUsuarios(): Observable<Usuario[]>{
+		return this.http.get<Usuario[]>(this.urlListaUsuarios);
 	}
 
 	public getEvento(id: any): Observable<Evento>{
@@ -32,6 +37,10 @@ export class WebserviceService {
 		return this.http.get<Evento>(url);
 	}
 
+	public getUsuario(id: any): Observable<Usuario>{
+		const url = `${this.urlCRUDUsuario}/${id}`;
+		return this.http.get<Usuario>(url);
+	}
 	public postEvento(evento: Evento): Observable<Evento>{
 		return this.http.post<Evento>(this.urlCRUD, evento)
 	}

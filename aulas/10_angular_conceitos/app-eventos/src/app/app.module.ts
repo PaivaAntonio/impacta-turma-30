@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { SharedModule } from './components/shared/shared.module';
 import { HomeComponent } from './components/page/home/home.component';
 import { ListaEventosComponent } from './components/page/eventos/lista/lista-eventos.component';
-import { UsuariosComponent } from './components/page/usuarios/usuarios.component';
+import { ListaUsuariosComponent } from './components/page/usuarios/lista/lista-usuarios.component';
 import { NotFoundComponent } from './components/page/not-found/not-found.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NovoEventoComponent } from './components/page/eventos/novo/novo-evento.component';
@@ -20,7 +20,7 @@ import { ExcluirEventoComponent } from './components/page/eventos/excluir/exclui
 		AppComponent,
 		HomeComponent,
 		ListaEventosComponent,
-		UsuariosComponent,
+		ListaUsuariosComponent,
 		NotFoundComponent,
 		NovoEventoComponent,
 		VerEventoComponent,
