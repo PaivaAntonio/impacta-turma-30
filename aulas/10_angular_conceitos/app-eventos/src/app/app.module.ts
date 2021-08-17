@@ -5,15 +5,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SharedModule } from './components/shared/shared.module';
 import { HomeComponent } from './components/page/home/home.component';
-import { ListaEventosComponent } from './components/page/eventos/lista/eventos.component';
+import { ListaEventosComponent } from './components/page/eventos/lista/lista-eventos.component';
 import { UsuariosComponent } from './components/page/usuarios/usuarios.component';
 import { NotFoundComponent } from './components/page/not-found/not-found.component';
 import { HttpClientModule } from '@angular/common/http';
-import { NovoEventoComponent } from './components/page/eventos/novo/novo.component';
+import { NovoEventoComponent } from './components/page/eventos/novo/novo-evento.component';
 import { FormsModule } from '@angular/forms';
-import { VerEventoComponent } from './components/page/eventos/ver/ver.component';
-import { EditarEventoComponent } from './components/page/eventos/editar/editar.component';
-import { ExcluirEventoComponent } from './components/page/eventos/excluir/excluir.component';
+import { VerEventoComponent } from './components/page/eventos/ver/ver-evento.component';
+import { EditarEventoComponent } from './components/page/eventos/editar/editar-evento.component';
+import { ExcluirEventoComponent } from './components/page/eventos/excluir/excluir-evento.component';
 
 @NgModule({
 	declarations: [

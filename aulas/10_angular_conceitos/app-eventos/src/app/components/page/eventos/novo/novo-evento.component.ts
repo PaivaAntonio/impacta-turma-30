@@ -6,8 +6,8 @@ import { Router } from '@angular/router';
 
 @Component({
 	selector: 'app-novo',
-	templateUrl: './novo.component.html',
-	styleUrls: ['./novo.component.scss']
+	templateUrl: './novo-evento.component.html',
+	styleUrls: ['./novo-evento.component.scss']
 })
 export class NovoEventoComponent implements OnInit {
 	evento: Evento;

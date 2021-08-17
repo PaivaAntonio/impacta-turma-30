@@ -5,8 +5,8 @@ import { WebserviceService } from 'src/app/services/webservice.service';
 
 @Component({
 	selector: 'app-ver',
-	templateUrl: './ver.component.html',
-	styleUrls: ['./ver.component.scss']
+	templateUrl: './ver-evento.component.html',
+	styleUrls: ['./ver-evento.component.scss']
 })
 export class VerEventoComponent implements OnInit {
 	evento: Evento;

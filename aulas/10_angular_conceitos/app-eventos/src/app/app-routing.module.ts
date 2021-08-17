@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { EditarEventoComponent } from './components/page/eventos/editar/editar.component';
-import { ExcluirEventoComponent } from './components/page/eventos/excluir/excluir.component';
-import { ListaEventosComponent } from './components/page/eventos/lista/eventos.component';
-import { NovoEventoComponent } from './components/page/eventos/novo/novo.component';
-import { VerEventoComponent } from './components/page/eventos/ver/ver.component';
+import { EditarEventoComponent } from './components/page/eventos/editar/editar-evento.component';
+import { ExcluirEventoComponent } from './components/page/eventos/excluir/excluir-evento.component';
+import { ListaEventosComponent } from './components/page/eventos/lista/lista-eventos.component';
+import { NovoEventoComponent } from './components/page/eventos/novo/novo-evento.component';
+import { VerEventoComponent } from './components/page/eventos/ver/ver-evento.component';
 import { HomeComponent } from './components/page/home/home.component';
 import { NotFoundComponent } from './components/page/not-found/not-found.component';
 import { UsuariosComponent } from './components/page/usuarios/usuarios.component';

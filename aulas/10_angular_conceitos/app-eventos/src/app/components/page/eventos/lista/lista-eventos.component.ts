@@ -4,8 +4,8 @@ import { WebserviceService } from 'src/app/services/webservice.service';
 
 @Component({
 	selector: 'app-eventos',
-	templateUrl: './eventos.component.html',
-	styleUrls: ['./eventos.component.scss']
+	templateUrl: './lista-eventos.component.html',
+	styleUrls: ['./lista-eventos.component.scss']
 })
 export class ListaEventosComponent implements OnInit {
 	eventos: Evento[] = [];
