@@ -7,7 +7,7 @@ export const environment = {
 	urlCRUD: "http://localhost:3200/evento",
 	urlList: "http://localhost:3200/eventos",
 	featureFlag: {
-		showLog: false,
+		showLog: true,
 		menu: {
 			usuarios: true,
 			eventos: true

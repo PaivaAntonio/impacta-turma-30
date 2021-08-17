@@ -12,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NovoEventoComponent } from './components/page/eventos/novo/novo.component';
 import { FormsModule } from '@angular/forms';
 import { VerEventoComponent } from './components/page/eventos/ver/ver.component';
+import { EditarEventoComponent } from './components/page/eventos/editar/editar.component';
 
 @NgModule({
 	declarations: [
@@ -21,7 +22,8 @@ import { VerEventoComponent } from './components/page/eventos/ver/ver.component'
 		UsuariosComponent,
 		NotFoundComponent,
 		NovoEventoComponent,
-		VerEventoComponent
+		VerEventoComponent,
+		EditarEventoComponent
 	],
 	imports: [
 		BrowserModule,
