@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/marianalino/impacta-turma-30#readme",
   "dependencies": {
-    "moment": "^2.29.1"
+    "bootstrap": "^5.1.0",
+    "moment": "^2.29.1",
+    "ngx-bootstrap": "^7.0.0"
   }
 }

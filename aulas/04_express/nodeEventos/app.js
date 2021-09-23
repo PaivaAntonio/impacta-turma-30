@@ -29,6 +29,6 @@ load('models').then('controllers').then('routes').into(app);
 
 // Usamos o listen para rodar o servidor assim como no outro exemplo do createServer
 // O Express encapsula o módulo de http e usa direto na chamada
-app.listen(3001, function(){
+app.listen(3003, function(){
   console.log('Aplicação rodando');
 })

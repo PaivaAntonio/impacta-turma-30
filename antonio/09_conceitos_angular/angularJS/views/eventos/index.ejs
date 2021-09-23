@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="appAngular">
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body ng-controller="CTLprincipal as ctl">
+    <h1>Eventos</h1>
+
+    <div class="row ml-auto centered">
+        <div class="col-md-6 text-center ml-auto">
+          <div class="p-5 m-5 border border-light ">
+      <table class="table text-white">
+        <thead class="thead-light">
+          <tr>
+            <th scope="col">Descrição</th>
+            <th scope="col">Data</th>
+            <th scope="col">Preço</th>
+          </tr>
+        </thead>
+        <tbody>       
+          <tr>
+            <th>---</th>
+            <td>---</td>
+            <td>R$ </td>
+          </tr>
+        </tbody>
+      </table>
+
+
+</body>
+
+<script>
+    var app= angular.module("appAngular", []);
+
+    app.controller("CTLprincipal", ['$http', function($http){
+        var self =this;
+        self.eventos = [];
+
+        var listarEventos = function(){
+            return $http.get('http://localhost:3200/eventos').then(function(resposta){
+                self.eventos = resposta.data;
+            });
+        }
+    }]);
+</script>
+</html>

@@ -1,0 +1,5 @@
+
+
+
+msg = () =>  console.log('teste');
+

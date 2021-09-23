@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Georama:wght@400;700&display=swap');
+
+* {
+  font-family: 'Georama', sans-serif;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: white;
+}
+
+body {
+  background: rgb(65,9,121,1);
+  background: linear-gradient(180deg, rgba(29,0,36,1) 0%, rgba(65,9,121,1) 35%, rgba(222,0,255,1) 100%);
+  height: 100vh;
+}
+
+header, main{
+  min-width: 300px;
+  max-width: 1200px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+header{
+  height: 100px;
+  padding: 40px 0;
+}
+
+header h1 {
+  text-align: center;
+  color: white;
+}
+
+a {
+  color: white;
+}
+
+.welcomeMsg{
+  padding-left: 20px;
+}
+
+.formulario {
+  min-width: 300px;
+  max-width: 500px;
+  width: 70%;
+  margin: 0 auto;
+  padding: 30px 0;
+}
+
+.formulario > div{
+  margin-bottom: 20px;
+}
+
+.formulario > div label{
+  display: block;
+  margin-bottom: 10px;
+}
+
+.formulario > div input{
+  height: 35px;
+  line-height: 35px;
+  width: 100%;
+  padding: 0 10px;
+  border-radius: 5px;
+  border: none;
+}
+
+.formulario > div button{
+  padding: 5px 15px;
+  color: rgb(65,9,121,1);
+  border-radius: 5px;
+  border: none;
+  background-color: white;
+}
+
+.formulario > div button:hover{
+  background-color: rgb(65,9,121,1);
+  color: white;
+}
+
+#menu{
+  padding: 20px 0;
+}
+
+#menu ul{
+  list-style: none;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+}
+
+#menu ul li{
+  float: left;
+}
+
+#menu ul li:last-of-type{
+  float: right;
+}
+
+#menu ul li a{
+  padding: 5px 20px;
+  text-decoration: none;
+}
+
+#menu ul li a:hover{
+  color: #dc00fe;
+}
+
+#menu ul li a.active{
+  color: #dc00fe;
+  font-weight: bold;
+}

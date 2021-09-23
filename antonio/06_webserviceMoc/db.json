@@ -1,0 +1,34 @@
+{
+  "produtos": [
+    {
+      "id": 1,
+      "descricao": "camiseta",
+      "preco": 30
+    },
+    {
+      "id": 2,
+      "descricao": "mochila",
+      "preco": 50
+    },
+    {
+      "id": 3,
+      "descricao": "celular",
+      "preco": 2000
+    },
+    {
+      "descricao": "Teclado Gamer",
+      "preco": "100.00",
+      "id": 4
+    },
+    {
+      "id": 5,
+      "descricao": "Cadeira Gamer",
+      "preco": "100.00"
+    },
+    {
+      "id": "6",
+      "descricao": "HeadPhone",
+      "preco": "80.00"
+    }
+  ]
+}
